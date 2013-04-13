@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413180441) do
+ActiveRecord::Schema.define(:version => 20130413200434) do
 
   create_table "comptes", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -30,9 +30,39 @@ ActiveRecord::Schema.define(:version => 20130413180441) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "comptable_id"
+    t.string   "comptable_type"
   end
 
   add_index "comptes", ["email"], :name => "index_comptes_on_email", :unique => true
   add_index "comptes", ["reset_password_token"], :name => "index_comptes_on_reset_password_token", :unique => true
+
+  create_table "individus", :force => true do |t|
+    t.string   "nom",                      :null => false
+    t.string   "prenom",                   :null => false
+    t.string   "adresse",                  :null => false
+    t.string   "code_postal",              :null => false
+    t.string   "ville",                    :null => false
+    t.string   "telephone"
+    t.string   "site_internet"
+    t.string   "activite_principale",      :null => false
+    t.integer  "annee_naissance",          :null => false
+    t.string   "institut_de_rattachement"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  create_table "structures", :force => true do |t|
+    t.string   "denomination",        :null => false
+    t.string   "activite_principale", :null => false
+    t.string   "adresse",             :null => false
+    t.string   "code_postal",         :null => false
+    t.string   "ville",               :null => false
+    t.string   "telephone"
+    t.string   "site_internet"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.integer  "annee"
+  end
 
 end

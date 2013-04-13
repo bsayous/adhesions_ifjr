@@ -1,5 +1,15 @@
 AdhesionsIfjr::Application.routes.draw do
-  devise_for :comptes
+  resources :structures
+
+  resources :individus
+
+  devise_for :comptes, :controllers => { :sessions => "comptes" } do
+    get "comptes/verifier", :to => "comptes#verifier"
+    get "comptes/infos_particulier", :to => "comptes#remplir_infos_individu"
+    post "comptes/infos_particulier", :to => "comptes#valider_infos_individu"
+    get "comptes/infos_personne_morale", :to => "comptes#remplir_infos_structure"
+    post "comptes/infos_personne_morale", :to => "comptes#valider_infos_structure"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
