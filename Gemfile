@@ -10,7 +10,6 @@ gem 'devise'
 
 group :production do
   gem 'pg'
-  gem 'bootstrap_helper'
 end
 group :development, :test do
   gem 'sqlite3'
