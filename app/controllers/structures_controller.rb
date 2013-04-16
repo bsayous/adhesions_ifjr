@@ -1,4 +1,6 @@
 class StructuresController < ApplicationController
+  before_filter :verfier_comptable
+  load_and_authorize_resource
   # GET /structures
   # GET /structures.json
   def index

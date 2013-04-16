@@ -7,6 +7,8 @@ class Compte < ActiveRecord::Base
 
   belongs_to :comptable, :polymorphic => true
 
+  has_many :compte_roles
+  has_many :roles, :through => :compte_roles
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me

@@ -3,7 +3,7 @@ AdhesionsIfjr::Application.routes.draw do
 
   resources :individus
 
-  devise_for :comptes, :controllers => { :sessions => "comptes" } do
+  devise_for :comptes do
     get "comptes/verifier", :to => "comptes#verifier"
     get "comptes/infos_particulier", :to => "comptes#remplir_infos_individu"
     post "comptes/infos_particulier", :to => "comptes#valider_infos_individu"

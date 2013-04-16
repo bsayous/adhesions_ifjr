@@ -1,4 +1,6 @@
 class IndividusController < ApplicationController
+  before_filter :verfier_comptable
+  load_and_authorize_resource
   # GET /individus
   # GET /individus.json
   def index

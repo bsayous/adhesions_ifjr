@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413200434) do
+ActiveRecord::Schema.define(:version => 20130416202214) do
+
+  create_table "compte_roles", :force => true do |t|
+    t.integer  "compte_id"
+    t.integer  "role_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "compte_roles", ["compte_id", "role_id"], :name => "index_compte_roles_on_compte_id_and_role_id"
 
   create_table "comptes", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -50,6 +59,12 @@ ActiveRecord::Schema.define(:version => 20130413200434) do
     t.string   "institut_de_rattachement"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "structures", :force => true do |t|

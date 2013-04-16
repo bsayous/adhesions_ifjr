@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authenticate_compte!
-  before_filter :verfier_comptable
+  
+  def current_ability
+    @current_ability ||= Ability.new(current_compte)
+  end
   
   def verfier_comptable
     if compte_signed_in?

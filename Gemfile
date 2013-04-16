@@ -7,7 +7,8 @@ gem 'rails', '3.2.8'
 
 gem 'simple_form'
 gem 'devise'
-
+gem "cancan"
+gem 'seed-fu'
 group :production do
   gem 'pg'
 end
