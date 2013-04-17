@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416202214) do
+ActiveRecord::Schema.define(:version => 20130417210905) do
 
   create_table "compte_roles", :force => true do |t|
     t.integer  "compte_id"
@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(:version => 20130416202214) do
     t.string   "institut_de_rattachement"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+  end
+
+  create_table "periode_adhesions", :force => true do |t|
+    t.string   "libelle"
+    t.date     "date_debut"
+    t.date     "date_fin"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "roles", :force => true do |t|

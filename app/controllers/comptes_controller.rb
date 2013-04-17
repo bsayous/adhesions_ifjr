@@ -33,4 +33,8 @@ class ComptesController < ApplicationController
 		end		
 	end
 	
+	
+	def mes_infos
+		redirect_to current_compte.comptable
+	end
 end

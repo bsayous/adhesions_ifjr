@@ -26,6 +26,8 @@ group :assets do
   gem "therubyracer"
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem "twitter-bootstrap-rails"
+  
+  gem "font-awesome-rails"
 
   gem 'uglifier', '>= 1.0.3'
 end

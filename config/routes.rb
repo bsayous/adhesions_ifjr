@@ -1,10 +1,13 @@
 AdhesionsIfjr::Application.routes.draw do
+  resources :periode_adhesions
+
   resources :structures
 
   resources :individus
 
   devise_for :comptes do
     get "comptes/verifier", :to => "comptes#verifier"
+    get "comptes/mes_infos", :to => "comptes#mes_infos"
     get "comptes/infos_particulier", :to => "comptes#remplir_infos_individu"
     post "comptes/infos_particulier", :to => "comptes#valider_infos_individu"
     get "comptes/infos_personne_morale", :to => "comptes#remplir_infos_structure"

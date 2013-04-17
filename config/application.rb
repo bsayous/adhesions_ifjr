@@ -60,7 +60,12 @@ module AdhesionsIfjr
     config.assets.version = '1.0'
     
     config.assets.initialize_on_precompile = false 
-
+    
+    # Pas de generation de css avec le scaffold
+    config.generators do |g|
+      g.stylesheets false
+    end
+  
     
   end
 end

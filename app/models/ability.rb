@@ -7,7 +7,7 @@ class Ability
     if @compte.roles.size == 0
       can [:show, :update], Individu, :compte => { :id => compte.id }
       can [:show, :update], Structure, :compte => { :id => compte.id }
-      can [:verifier, :remplir_infos_individu, :valider_infos_individu, :remplir_infos_structure, :valider_infos_structure], Compte 
+      can [:verifier, :remplir_infos_individu, :valider_infos_individu, :remplir_infos_structure, :valider_infos_structure, :mes_infos], Compte 
     end
 
   end
@@ -16,6 +16,7 @@ class Ability
     can :manage, Compte
     can :manage, Individu
     can :manage, Structure
+    can :manage, PeriodeAdhesion
   end
     #
     # See the wiki for details:

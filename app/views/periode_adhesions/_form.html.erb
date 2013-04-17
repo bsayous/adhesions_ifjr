@@ -1,0 +1,10 @@
+<%= simple_form_for @periode_adhesion, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :libelle %>
+  <%= f.input :date_debut %>
+  <%= f.input :date_fin %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                periode_adhesions_path, :class => 'btn' %>
+  </div>
+<% end %>
