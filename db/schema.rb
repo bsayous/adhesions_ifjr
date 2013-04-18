@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130417210905) do
+ActiveRecord::Schema.define(:version => 20130418203111) do
 
   create_table "compte_roles", :force => true do |t|
     t.integer  "compte_id"
@@ -87,5 +87,17 @@ ActiveRecord::Schema.define(:version => 20130417210905) do
     t.datetime "updated_at",          :null => false
     t.integer  "annee"
   end
+
+  create_table "type_adhesions", :force => true do |t|
+    t.string   "libelle"
+    t.string   "type_comptable"
+    t.decimal  "montant"
+    t.boolean  "droit_vote"
+    t.integer  "periode_adhesion_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "type_adhesions", ["periode_adhesion_id"], :name => "index_type_adhesions_on_periode_adhesion_id"
 
 end

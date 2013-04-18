@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  libelle: MyString
+  type_comptable: MyString
+  montant: 9.99
+  droit_vote: false
+  periode_adhesion: 
+
+two:
+  libelle: MyString
+  type_comptable: MyString
+  montant: 9.99
+  droit_vote: false
+  periode_adhesion: 

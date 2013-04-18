@@ -1,0 +1,12 @@
+<%= simple_form_for @type_adhesion, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :libelle %>
+  <%= f.input :type_comptable, :collection => TypeAdhesion::TYPE_COMPTABLES %>
+  <%= f.input :montant %>
+  <%= f.input :droit_vote %>
+  <%= f.association :periode_adhesion %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                type_adhesions_path, :class => 'btn' %>
+  </div>
+<% end %>

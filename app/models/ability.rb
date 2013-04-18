@@ -17,6 +17,7 @@ class Ability
     can :manage, Individu
     can :manage, Structure
     can :manage, PeriodeAdhesion
+    can :manage, TypeAdhesion
   end
     #
     # See the wiki for details:

@@ -1,4 +1,6 @@
 AdhesionsIfjr::Application.routes.draw do
+  resources :type_adhesions
+
   resources :periode_adhesions
 
   resources :structures
