@@ -1,4 +1,13 @@
 AdhesionsIfjr::Application.routes.draw do
+  resources :adhesions do
+    collection do
+      get "mes_adhesions", :to => "adhesions#mes_adhesions"
+      get "rechercher_adherent", :to => "adhesions#acces_recherche_adherent"
+      post "rechercher_adherent", :to => "adhesions#rechercher_adherent"
+    end
+  end
+
+
   resources :type_adhesions
 
   resources :periode_adhesions
@@ -6,6 +15,25 @@ AdhesionsIfjr::Application.routes.draw do
   resources :structures
 
   resources :individus
+
+  match "/individus/:individu_id/adhesions" => "adhesions#individu_adhesions", :via => :get, :as => :individu_adhesions
+  match "/individus/:individu_id/adhesions" => "adhesions#create_individu_adhesions", :via => :post, :as => :individu_adhesions
+  match "/individus/:individu_id/adhesions/new" => "adhesions#new_individu_adhesions", :via => :get, :as => :new_individu_adhesions
+  match "/individus/:individu_id/adhesions/:id/edit" => "adhesions#edit_individu_adhesion", :via => :get, :as => :edit_individu_adhesion
+  match "/individus/:individu_id/adhesions/:id" => "adhesions#show_individu_adhesion", :via => :get, :as => :individu_adhesion
+  match "/individus/:individu_id/adhesions/:id" => "adhesions#update_individu_adhesion", :via => :put, :as => :individu_adhesion
+  match "/individus/:individu_id/adhesions/:id" => "adhesions#delete_individu_adhesion", :via => :delete, :as => :individu_adhesion
+
+#               individu_adhesions GET    /individus/:individu_id/adhesions(.:format)          adhesions#index
+#                                  POST   /individus/:individu_id/adhesions(.:format)          adhesions#create
+#            new_individu_adhesion GET    /individus/:individu_id/adhesions/new(.:format)      adhesions#new
+#           edit_individu_adhesion GET    /individus/:individu_id/adhesions/:id/edit(.:format) adhesions#edit
+#                individu_adhesion GET    /individus/:individu_id/adhesions/:id(.:format)      adhesions#show
+#                                  PUT    /individus/:individu_id/adhesions/:id(.:format)      adhesions#update
+#                                  DELETE /individus/:individu_id/adhesions/:id(.:format)      adhesions#destroy
+#  resources :individus do
+#     resources :adhesions
+#  end
 
   devise_for :comptes do
     get "comptes/verifier", :to => "comptes#verifier"

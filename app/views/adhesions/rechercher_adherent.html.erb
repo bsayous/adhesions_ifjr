@@ -1,0 +1,57 @@
+<div class="row-fluid">
+    <div class="span6">
+        <%= simple_form_for :personne, :url => rechercher_adherent_adhesions_path, :method => :post, :html => { :class => 'form-horizontal' } do |f| %>
+          <fieldset>
+            <legend>Recherche d'individus</legend>
+              <%= f.input :nom %>
+              <%= f.input :prenom %>
+              <%= f.hidden_field :type, :value => TypeAdhesion::TYPE_INDIVIDU %>
+              <div class="control-group">
+                <div class="controls">
+                  <%= f.button :submit, "Lancer la recherche", :class => 'btn btn-warning' %>
+                </div>
+              </div>  
+          </fieldset>
+        <% end %>
+    </div>
+    <div class="span6">
+        <%= simple_form_for :personne, :url => rechercher_adherent_adhesions_path, :html => { :class => 'form-horizontal' } do |f| %>
+          <fieldset>
+            <legend>Recherche de structures</legend>
+              <%= f.input :libelle %>
+              <%= f.hidden_field :type, :value => TypeAdhesion::TYPE_STRUCTURE %>
+              <div class="control-group">
+                <div class="controls">
+                  <%= f.button :submit, "Lancer la recherche", :class => 'btn btn-info' %>
+                </div>
+              </div>  
+          </fieldset>
+        <% end %>
+    </div>    
+</div>
+<h1>Résultats</h1>
+<div class="row-fluid">
+    <div class="span12">
+        <table class="table table-striped table-bordered">
+            <colgroup>
+              <col class="span1">
+              <col class="span11">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Libellé</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @personnes.each do |p| %>
+                    <tr>   
+                        <td><%= p.id %></td>
+                        <td><%= p %></td>
+                    </tr>
+                <% end %>             
+            </tbody>
+        </table>
+
+    </div>    
+</div>

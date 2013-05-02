@@ -1,13 +1,15 @@
 # == Schema Information
 #
-# Table name: type_adhesions
+# Table name: adhesions
 #
 #  id                  :integer          not null, primary key
-#  libelle             :string(255)
-#  type_comptable      :string(255)
 #  montant             :decimal(, )
 #  droit_vote          :boolean
+#  etat                :string(255)
+#  type_adhesion_id    :integer
 #  periode_adhesion_id :integer
+#  adherent_id         :integer
+#  adherent_type       :string(255)
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #
@@ -15,15 +17,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  libelle: MyString
-  type_comptable: MyString
   montant: 9.99
   droit_vote: false
+  etat: MyString
+  type_adhesion: 
   periode_adhesion: 
+  comptable: 
 
 two:
-  libelle: MyString
-  type_comptable: MyString
   montant: 9.99
   droit_vote: false
+  etat: MyString
+  type_adhesion: 
   periode_adhesion: 
+  comptable: 

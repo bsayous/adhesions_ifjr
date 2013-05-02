@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: individus
+#
+#  id                       :integer          not null, primary key
+#  nom                      :string(255)      not null
+#  prenom                   :string(255)      not null
+#  adresse                  :string(255)      not null
+#  code_postal              :string(255)      not null
+#  ville                    :string(255)      not null
+#  telephone                :string(255)
+#  site_internet            :string(255)
+#  activite_principale      :string(255)      not null
+#  annee_naissance          :integer          not null
+#  institut_de_rattachement :string(255)
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 # This model initially had no columns defined.  If you add columns to the

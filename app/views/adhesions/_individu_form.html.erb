@@ -1,0 +1,10 @@
+<%= simple_form_for [@individu, @adhesion], :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :type_adhesion, 
+    :collection => type_individu_adhesions_pour_current_periode, 
+    :as => :radio %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                adhesions_path, :class => 'btn' %>
+  </div>
+<% end %>

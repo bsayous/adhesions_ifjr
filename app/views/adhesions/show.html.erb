@@ -1,0 +1,33 @@
+<%- model_class = Adhesion -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:montant) %>:</strong></dt>
+  <dd><%= @adhesion.montant %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:droit_vote) %>:</strong></dt>
+  <dd><%= @adhesion.droit_vote %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:etat) %>:</strong></dt>
+  <dd><%= @adhesion.etat %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:type_adhesion_id) %>:</strong></dt>
+  <dd><%= @adhesion.type_adhesion_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:periode_adhesion_id) %>:</strong></dt>
+  <dd><%= @adhesion.periode_adhesion_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:adherent_id) %>:</strong></dt>
+  <dd><%= @adhesion.adherent_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:adherent_type) %>:</strong></dt>
+  <dd><%= @adhesion.adherent_type %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              adhesions_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_adhesion_path(@adhesion), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              adhesion_path(@adhesion),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -9,6 +9,9 @@ gem 'simple_form'
 gem 'devise'
 gem "cancan"
 gem 'seed-fu'
+
+gem 'annotate'
+
 group :production do
   gem 'pg'
 end
